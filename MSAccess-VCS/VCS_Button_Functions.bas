@@ -16,7 +16,8 @@ Function subUpdateBtn(btnFunction As String)
             ImportProject (True)
         Case "exportFormsBtn"
             Debug.Print "button worked2: " & btnFunction
-            ExportAllSource (True) ' will skip exporting tables
+            'ExportAllSource (True) ' will skip exporting tablesExportAllSource
+            ExportAllSource (False) ' will not skip exporting tablesExportAllSource
         Case Else
             MsgBox "current function doesn't yet exist"
     End Select
