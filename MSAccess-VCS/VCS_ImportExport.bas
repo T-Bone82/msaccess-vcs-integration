@@ -10,7 +10,7 @@ Private Const INCLUDE_TABLES As String = ""
 
 Private Const INCLUDE_TABLES_PFS As String = ""
 ' This is used in ImportAllSource
-Private Const DebugOutput As Boolean = False
+Private Const DebugOutput As Boolean = True
 'this is used in ExportAllSource
 'Causes the VCS_ code to be exported
 Private Const ArchiveMyself As Boolean = False
@@ -545,16 +545,16 @@ Public Sub ImportProject(Optional ByVal isButton As Boolean)
     End If
     
     If MsgBox("This action will delete all existing: " & vbCrLf & _
-              vbCrLf & _
-              IIf(includeTables, Chr$(149) & " Tables" & vbCrLf, "") & _
-              Chr$(149) & " Forms" & vbCrLf & _
-              Chr$(149) & " Macros" & vbCrLf & _
-              Chr$(149) & " Modules" & vbCrLf & _
-              Chr$(149) & " Queries" & vbCrLf & _
-              Chr$(149) & " Reports" & vbCrLf & _
-              vbCrLf & _
-              "Are you sure you want to proceed?", vbCritical + vbYesNo, _
-              "Import Project") <> vbYes Then
+            vbCrLf & _
+            IIf(includeTables, Chr$(149) & " Tables" & vbCrLf, "") & _
+            Chr$(149) & " Forms" & vbCrLf & _
+            Chr$(149) & " Macros" & vbCrLf & _
+            Chr$(149) & " Modules" & vbCrLf & _
+            Chr$(149) & " Queries" & vbCrLf & _
+            Chr$(149) & " Reports" & vbCrLf & _
+            vbCrLf & _
+            "Are you sure you want to proceed?", vbCritical + vbYesNo, _
+            "Import Project") <> vbYes Then
         Exit Sub
     End If
 
@@ -719,6 +719,7 @@ Exit_Proc:
 Err_Handle:
     Resume Exit_Proc
 End Function
+
 
 
 
