@@ -13,7 +13,7 @@ Function subUpdateBtn(btnFunction As String)
     Select Case btnFunction
         Case "updateFormsBtn" ', "exportFormsBtn", "resetFormsBtn"
             Debug.Print "button worked: " & btnFunction
-            ImportProject (True)
+            ImportProject (False) ' will not skip table restore when clicking on ribbon
         Case "exportFormsBtn"
             Debug.Print "button worked2: " & btnFunction
             'ExportAllSource (True) ' will skip exporting tablesExportAllSource
@@ -33,3 +33,4 @@ Function formDialog()
     OutPut = MsgBox("Close the File.Try Again?", vbYesNoCancel + vbDefaultButton3, "Example of vbDefaultButton3")
 
 End Function
+
